@@ -53,7 +53,7 @@ export default function LinkModel({ hovered }: Props) {
               <meshBasicMaterial>
                 <GradientTexture
                   stops={[0.2, 0.5, 0.8]} // As many stops as you want
-                  colors={["#693B93", "#E06CB4", "#693B93"]} // Colors need to match the number of stops
+                  colors={["#FF2A1A", "#FF7A18", "#F6B13D"]} // Colors need to match the number of stops
                   size={200} // Size is optional, default = 1024
                 />
               </meshBasicMaterial>

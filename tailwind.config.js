@@ -10,7 +10,6 @@ module.exports = {
     extend: {
       colors: {
         "dark-blue": "#080A0A",
-        purple: "#E23B2E",
         "light-clay": "#F3E7C3",
         "dark-clay": "#1A1010",
         signal: "#F2552C",
@@ -20,6 +19,7 @@ module.exports = {
       fontFamily: {
         mono: ["Cascadia Mono", "Segoe UI Mono", ...fontFamily.mono],
         sans: ["Segoe UI", "Arial", ...fontFamily.sans],
+        display: ["Arial Narrow", "Roboto Condensed", "Impact", "Arial", "sans-serif"],
       },
     },
   },

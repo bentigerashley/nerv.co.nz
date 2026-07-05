@@ -42,7 +42,7 @@ export default function Stack({}: Props) {
   return (
     <motion.div className="h-screen min-w-screen flex justify-center items-center">
       <div className="m-auto flex flex-col justify-center items-center">
-        <h2 className="mx-10 text-3xl md:text-4xl lg:text-6xl mb-16 font-bold">
+        <h2 className="font-display uppercase mx-10 text-3xl md:text-4xl lg:text-6xl mb-16">
           tools in rotation.
         </h2>
         <motion.div

@@ -4,7 +4,7 @@ export default function Socials() {
   return (
     <div className="pb-16 md:pb-0 h-screen min-w-screen flex justify-center items-center">
       <div className="max-w-[1280px] mx-auto">
-        <h2 className="mx-10 text-3xl md:text-4xl lg:text-6xl mb-6 font-bold">
+        <h2 className="font-display uppercase mx-10 text-3xl md:text-4xl lg:text-6xl mb-6">
           external signals
         </h2>
         <motion.div className="signal-panel relative max-w-fit mx-auto flex justify-center backdrop-blur-sm py-3 px-6">

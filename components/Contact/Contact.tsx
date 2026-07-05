@@ -29,7 +29,7 @@ export default function Contact() {
   return (
     <div className="h-screen min-w-screen flex justify-center items-center">
       <div className="max-w-[1280px] mx-auto">
-        <h2 className="mx-10 text-3xl md:text-4xl lg:text-6xl mb-6 font-bold">
+        <h2 className="font-display uppercase mx-10 text-3xl md:text-4xl lg:text-6xl mb-6">
           establish contact
         </h2>
         <div className="signal-panel py-3 px-4 min-w-[30vw] max-w-2xl min-h-[384px] mx-3 lg:mx-auto font-mono">
@@ -39,6 +39,9 @@ export default function Contact() {
             <WindowButton color="#61C554" />
           </div>
           <div>
+            <p className="mb-6 border-y border-signal/50 py-2 text-xs text-amber">
+              UPLINK DESTINATION // BEN@NERV.CO.NZ
+            </p>
             <form action="/api/contact" method="POST" onSubmit={handleSubmit}>
               <span className="flex">
                 nerv-terminal:~ ben$ curl POST /contact-form -d

@@ -22,7 +22,7 @@ export default async function handler(
 
   const apiKey = process.env.SENDGRID_API_KEY;
   const from = process.env.SENDGRID_FROM_EMAIL;
-  const to = process.env.CONTACT_TO_EMAIL ?? "hello@nerv.co.nz";
+  const to = process.env.CONTACT_TO_EMAIL ?? "ben@nerv.co.nz";
   if (!apiKey || !from) {
     return res.status(503).json({ status: 503, message: "Contact service is not configured." });
   }
