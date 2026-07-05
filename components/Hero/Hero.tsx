@@ -22,7 +22,7 @@ export default function Hero() {
       </div>
       <div className="w-full lg:w-1/2 relative flex flex-col justify-center">
         <p className="signal-label self-center lg:self-start bg-dark-blue/80 px-2 py-1 font-mono text-base mb-4 text-center lg:text-left">
-           // nerv.co.nz
+          {"// nerv.co.nz"}
         </p>
         <p className="font-mono text-3xl mb-6 text-center lg:text-5xl lg:text-left lg:mb-12 text-light-clay">
           hey, i&apos;m ben,
