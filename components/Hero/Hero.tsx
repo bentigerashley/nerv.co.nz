@@ -5,7 +5,7 @@ export default function Hero() {
         <div className="signal-panel w-full max-w-md min-h-[220px] p-6 font-mono text-sm text-terminal">
           <div className="flex justify-between text-amber">
             <span>PROFILE: BEN</span>
-            <span>SYNC 100</span>
+            {/* <span>SYNC 100</span> */}
           </div>
           <div className="mt-10 grid grid-cols-[auto_1fr] gap-x-4 gap-y-3">
             <span className="text-signal">01</span>

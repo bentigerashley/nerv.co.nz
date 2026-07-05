@@ -56,7 +56,7 @@ export default function Contact() {
                       setFormData({ ...formData, email: val })
                     }
                     value={formData.email}
-                    placeholder="example@email.com"
+                    placeholder="crash@bandicoot.com"
                   />
                   &quot;,
                 </div>
