@@ -49,7 +49,7 @@ export default function Home({ data }: Props) {
             gl={{ depth: false }}
             camera={{ position: [0, 0, 15], fov: 45 }}
           >
-            <color attach="background" args={["#02080d"]}></color>
+            <color attach="background" args={["black"]}></color>
             <ScrollControls
               pages={5}
               distance={1}
