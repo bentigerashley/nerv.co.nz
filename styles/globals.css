@@ -167,7 +167,7 @@ input:-webkit-autofill:active {
   font-weight: 700;
   transform: scaleX(0.79);
   transform-origin: center;
-  text-shadow: 0 0 5px rgba(255, 122, 24, 0.2);
+  text-shadow: 0 0 50px rgba(255, 255, 255, 0.2);
 }
 
 .font-display.origin-left {

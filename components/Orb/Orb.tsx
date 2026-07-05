@@ -56,7 +56,7 @@ export default function Orb() {
         <Vignette eskil={false} offset={0.2} darkness={0.65} />
       </EffectComposer>
 
-      <motion3d.group>
+      {/* <motion3d.group>
         <Sphere
           ref={orb}
           color="#F2552C"
@@ -65,7 +65,7 @@ export default function Orb() {
           glow="#F6B13D"
           size={0.72}
         />
-      </motion3d.group>
+      </motion3d.group> */}
     </>
   );
 }
@@ -81,7 +81,7 @@ type SphereProps = {
 const Sphere = forwardRef(
   (
     {
-      size = 1,
+      size = 0.51,
       amount = 50,
       color = "white",
       emissive = "white",
@@ -101,7 +101,7 @@ const Sphere = forwardRef(
         <MeshDistortMaterial
           transparent={true}
           blending={THREE.MultiplyBlending}
-          emissive="#F2552C"
+          emissive="#f22c2c"
           emissiveIntensity={0}
           toneMapped={false}
           distort={0.5}
