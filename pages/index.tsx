@@ -30,7 +30,7 @@ const posts: Post[] = [
     link: "https://github.com/bentigerashley/chess-vision",
   },
   {
-    title: "nerv.co.nz",
+    title: "nerv-vercel",
     desc: "The website you're on. A developer portfolio built with Next.js, Three.js, Vercel, and a signal-driven interface for email handling.",
     link: "https://github.com/bentigerashley/nerv.co.nz",
   },

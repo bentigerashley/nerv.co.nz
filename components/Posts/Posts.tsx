@@ -16,7 +16,7 @@ export default function Posts({ posts }: Props) {
       <div className="w-full max-w-6xl relative">
         <div className="telemetry-backdrop" aria-hidden="true" />
         <header className="relative z-10 mb-10 border-b border-signal pb-3 flex items-end justify-between gap-4">
-          <h2 className="font-display origin-left uppercase text-4xl md:text-6xl text-light-clay">Project directory</h2>
+          <h2 className="font-display origin-left uppercase text-4xl md:text-6xl text-light-clay">directory</h2>
           <span className="hidden sm:block font-mono text-xs text-terminal">ACTIVE CHANNEL // 01</span>
         </header>
         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
