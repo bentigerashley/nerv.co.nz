@@ -13,6 +13,15 @@ export default function Socials() {
               src="/assets/logos/github.svg"
               href="https://github.com/bentigerashley"
             />
+            <LogoImage
+              src="/assets/logos/discord.svg"
+              href="https://discord.com/user/229147991716397056"
+            />
+            <LogoImage
+              src="/assets/logos/linkedin.svg"
+              href="https://linkedin.com/in/btashley"
+            />
+            
           </motion.div>
         </motion.div>
       </div>

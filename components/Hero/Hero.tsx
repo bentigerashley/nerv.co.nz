@@ -5,7 +5,7 @@ export default function Hero() {
         <div className="signal-panel w-full max-w-md min-h-[220px] p-6 font-mono text-sm text-terminal">
           <div className="flex justify-between text-amber">
             <span>PROFILE: BEN</span>
-            <span>SYNC</span>
+            <span>SYNC 100</span>
           </div>
           <div className="mt-10 grid grid-cols-[auto_1fr] gap-x-4 gap-y-3">
             <span className="text-signal">01</span>
@@ -21,9 +21,9 @@ export default function Hero() {
         </div>
       </div>
       <div className="w-full lg:w-1/2 relative flex flex-col justify-center">
-        <p className="signal-label self-center lg:self-start bg-dark-blue/80 px-2 py-1 font-mono text-base mb-4 text-center lg:text-left">
+        {/* <p className="signal-label self-center lg:self-start bg-dark-blue/80 px-2 py-1 font-mono text-base mb-4 text-center lg:text-left">
           {"// nerv.co.nz"}
-        </p>
+        </p> */}
         <p className="font-mono text-3xl mb-6 text-center lg:text-5xl lg:text-left lg:mb-12 text-light-clay">
           hey, i&apos;m ben,
           <br /> full-stack dev.

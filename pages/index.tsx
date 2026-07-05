@@ -25,17 +25,26 @@ interface Post {
 
 const posts: Post[] = [
   {
+    title: "chess-vision",
+    desc: "Android app that captures or imports a photo of a chessboard, detects the board and pieces with TensorFlow Lite, converts the position to FEN, and runs Stockfish for evaluation and best move.",
+    link: "https://github.com/bentigerashley/chess-vision",
+  },
+  {
     title: "nerv.co.nz",
-    desc: "A minimalist developer portfolio built with Next.js, Three.js, and a signal-driven interface.",
+    desc: "The website you're on. A developer portfolio built with Next.js, Three.js, Vercel, and a signal-driven interface for email handling.",
     link: "https://github.com/bentigerashley/nerv.co.nz",
   },
+  
+  
+  
+  
 ];
 
 export default function Home({ data }: Props) {
   return (
     <>
       <Head>
-        <title>nerv.co.nz</title>
+        <title>NERV</title>
         <meta name="description" content="hey, i'm ben, full-stack dev." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
