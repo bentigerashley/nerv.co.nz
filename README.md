@@ -13,15 +13,15 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Contact email
 
-The contact terminal delivers mail through SendGrid. Add these environment variables locally and in Vercel:
+The contact terminal delivers mail through Resend. Add these environment variables locally and in Vercel:
 
 ```text
-SENDGRID_API_KEY=...
-SENDGRID_FROM_EMAIL=verified-sender@example.com
+RESEND_API_KEY=...
+RESEND_FROM_EMAIL=nerv.co.nz <contact@nerv.co.nz>
 CONTACT_TO_EMAIL=ben@nerv.co.nz
 ```
 
-`SENDGRID_FROM_EMAIL` must be a verified SendGrid sender. `CONTACT_TO_EMAIL` defaults to `ben@nerv.co.nz` when omitted.
+The domain used by `RESEND_FROM_EMAIL` must be verified in Resend. `CONTACT_TO_EMAIL` defaults to `ben@nerv.co.nz` when omitted.
 
 ## Verification
 
