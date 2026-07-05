@@ -1,9 +1,6 @@
 import {
-  Billboard,
-  Bounds,
   MeshDistortMaterial,
   Float,
-  useScroll,
 } from "@react-three/drei";
 
 import { motion as motion3d } from "framer-motion-3d";
@@ -17,16 +14,12 @@ import {
 } from "@react-three/postprocessing";
 import { useFrame, useThree, MeshProps } from "@react-three/fiber";
 import { useRef, forwardRef, Ref } from "react";
-import { LayerMaterial, Depth } from "lamina";
 
 export default function Orb() {
-  const data = useScroll();
-
   const orb = useRef<THREE.Mesh>(null);
   const vec = new THREE.Vector3();
   const viewport = useThree((state) => state.viewport);
   useFrame((state) => {
-    const SCALE = 1.2;
     orb.current?.position.lerp(
       vec.set(
         (state.mouse.x * viewport.width) / 15,
@@ -46,9 +39,9 @@ export default function Orb() {
       <EffectComposer>
         <Bloom
           mipmapBlur
-          intensity={0.45}
-          radius={0.65}
-          luminanceThreshold={0.2}
+          intensity={0.08}
+          radius={0.2}
+          luminanceThreshold={0.55}
           luminanceSmoothing={0.99}
           height={300}
         />
@@ -62,8 +55,8 @@ export default function Orb() {
           color="#F2552C"
           amount={20}
           emissive="#F2552C"
-          glow="#F6B13D"
-          size={0.72}
+          glow="#F2552C"
+          size={0.18}
         />
       </motion3d.group>
     </>
@@ -97,89 +90,20 @@ const Sphere = forwardRef(
       floatingRange={[-0.1, 0.1]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
     >
       <motion3d.mesh ref={ref as Ref<MeshProps> | undefined} {...props}>
-        <sphereGeometry args={[size, 128, 128]} />
+        <sphereGeometry args={[size, 64, 64]} />
         <MeshDistortMaterial
-          transparent={true}
-          blending={THREE.MultiplyBlending}
+          transparent
+          opacity={0.42}
+          blending={THREE.NormalBlending}
+          color={color}
           emissive="#F2552C"
-          emissiveIntensity={0}
+          emissiveIntensity={0.2}
           toneMapped={false}
           distort={0.5}
           speed={2}
-        />
-        <Glow
-          scale={size * 1.2}
-          near={-2}
-          far={1.4}
-          color={glow || emissive || color}
         />
       </motion3d.mesh>
     </Float>
   )
 );
 Sphere.displayName = "Sphere";
-type GlowProps = {
-  color?: string;
-  scale?: number;
-  near?: number;
-  far?: number;
-};
-
-export const Glow = ({
-  color,
-  scale = 0.5,
-  near = -2,
-  far = 1.4,
-}: GlowProps) => (
-  <Billboard>
-    <mesh>
-      <circleGeometry args={[2 * scale, 256]} />
-
-      <LayerMaterial
-        transparent
-        depthWrite={false}
-        blending={THREE.CustomBlending}
-        blendEquation={THREE.AddEquation}
-        blendSrc={THREE.SrcAlphaFactor}
-        blendDst={THREE.DstAlphaFactor}
-      >
-        <Depth
-          colorA={color}
-          colorB="black"
-          alpha={1}
-          mode="normal"
-          near={near * scale}
-          far={far * scale}
-          origin={[0, 0, 0]}
-        />
-        <Depth
-          colorA={color}
-          colorB="black"
-          alpha={0.5}
-          mode="add"
-          near={-40 * scale}
-          far={far * 1.2 * scale}
-          origin={[0, 0, 0]}
-        />
-        <Depth
-          colorA={color}
-          colorB="black"
-          alpha={1}
-          mode="add"
-          near={-15 * scale}
-          far={far * 0.7 * scale}
-          origin={[0, 0, 0]}
-        />
-        <Depth
-          colorA={color}
-          colorB="black"
-          alpha={1}
-          mode="add"
-          near={-10 * scale}
-          far={far * 0.68 * scale}
-          origin={[0, 0, 0]}
-        />
-      </LayerMaterial>
-    </mesh>
-  </Billboard>
-);
