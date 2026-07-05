@@ -15,7 +15,7 @@ export default function Socials() {
             />
             <LogoImage
               src="/assets/logos/discord.svg"
-              href="https://discord.com/user/229147991716397056"
+              href="https://discordapp.com/users/229147991716397056"
             />
             <LogoImage
               src="/assets/logos/linkedin.svg"
