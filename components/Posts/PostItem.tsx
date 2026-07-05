@@ -12,7 +12,7 @@ export default function PostItem({ title, description, href }: Props) {
   const [linkHovered, setLinkHovered] = useState(false);
   return (
     <article className="w-full z-10">
-      <h3 className="font-display uppercase text-2xl lg:text-3xl mb-3 ml-2 text-amber">
+      <h3 className="font-display origin-left uppercase text-2xl lg:text-3xl mb-3 ml-2 text-amber">
         {title}
       </h3>
       <div className="signal-panel relative px-6 py-4">

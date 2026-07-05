@@ -28,7 +28,7 @@ export default function Hero() {
           hey, i&apos;m ben,
           <br /> full-stack dev.
         </p>
-        <p className="text-3xl text-center lg:text-5xl lg:text-left text-amber">
+        <p className="text-3xl text-center lg:text-5xl lg:text-left text-light-clay">
           building precise,
           <br /> useful things.
         </p>

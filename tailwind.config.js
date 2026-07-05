@@ -19,7 +19,7 @@ module.exports = {
       fontFamily: {
         mono: ["Cascadia Mono", "Segoe UI Mono", ...fontFamily.mono],
         sans: ["Segoe UI", "Arial", ...fontFamily.sans],
-        display: ["Arial Narrow", "Roboto Condensed", "Impact", "Arial", "sans-serif"],
+        display: ["Times New Roman", "Times", "serif"],
       },
     },
   },
