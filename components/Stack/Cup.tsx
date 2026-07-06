@@ -28,7 +28,7 @@ export default function Cup({ position = [0, 0, 0] }: Props) {
         scale={0.5}
         name="Tea"
         ref={cup}
-        rotation={[0, -1.0, -0.66]}
+        rotation={[0.18, -0.9, -0.12]}
         position={[0, 0, 0]}
       >
         <mesh
@@ -37,7 +37,7 @@ export default function Cup({ position = [0, 0, 0] }: Props) {
           receiveShadow
           geometry={(nodes.Sphere002 as THREE.Mesh).geometry}
         >
-          <LayerMaterial color="#F2552C" side={THREE.DoubleSide}>
+          <LayerMaterial color="#F2552C">
             <Color color={"#F2552C"} />
             <Depth
               far={3}
@@ -65,7 +65,7 @@ export default function Cup({ position = [0, 0, 0] }: Props) {
           receiveShadow
           geometry={(nodes.Sphere002_1 as THREE.Mesh).geometry}
         >
-          <LayerMaterial color="#F2552C" side={THREE.DoubleSide}>
+          <LayerMaterial color="#F2552C">
             <Color color={"#F2552C"} />
             <Depth
               far={3}
@@ -95,7 +95,6 @@ export default function Cup({ position = [0, 0, 0] }: Props) {
           geometry={(nodes.Sphere002_2 as THREE.Mesh).geometry}
         >
           <MeshWobbleMaterial
-            side={THREE.DoubleSide}
             blending={THREE.AdditiveBlending}
             color={"#ffffff"}
             opacity={0.3}

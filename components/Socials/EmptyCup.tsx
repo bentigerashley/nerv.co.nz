@@ -21,7 +21,7 @@ export default function EmptyCup({ position }: Props) {
       position={new THREE.Vector3(position[0], position[1], position[2])}
       dispose={null}
     >
-      <group name="Scene" scale={0.4} rotation={[0.6, Math.PI, -0.3]}>
+      <group name="Scene" scale={0.4} rotation={[0.24, Math.PI, -0.12]}>
         <group ref={group as MutableRefObject<Group>} name="Cup">
           <mesh
             name="Circle007"
@@ -29,7 +29,7 @@ export default function EmptyCup({ position }: Props) {
             receiveShadow
             geometry={(nodes.Circle007 as THREE.Mesh).geometry}
           >
-            <LayerMaterial color="#F2552C" side={THREE.DoubleSide}>
+            <LayerMaterial color="#F2552C">
               <Color color={"#F2552C"} />
               <Depth
                 far={3}
@@ -57,7 +57,7 @@ export default function EmptyCup({ position }: Props) {
             receiveShadow
             geometry={(nodes.Circle007_1 as THREE.Mesh).geometry}
           >
-            <LayerMaterial color="#F2552C" side={THREE.DoubleSide}>
+            <LayerMaterial color="#F2552C">
               <Color color={"#F2552C"} />
               <Depth
                 far={3}
@@ -86,7 +86,6 @@ export default function EmptyCup({ position }: Props) {
             geometry={(nodes.Circle007_2 as THREE.Mesh).geometry}
           >
             <meshStandardMaterial
-              side={THREE.DoubleSide}
               metalness={1.0}
               roughness={0.1}
               color={"white"}
