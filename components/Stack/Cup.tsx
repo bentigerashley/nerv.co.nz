@@ -37,7 +37,7 @@ export default function Cup({ position = [0, 0, 0] }: Props) {
           receiveShadow
           geometry={(nodes.Sphere002 as THREE.Mesh).geometry}
         >
-          <LayerMaterial color="#F2552C">
+          <LayerMaterial color="#F2552C" side={THREE.DoubleSide}>
             <Color color={"#F2552C"} />
             <Depth
               far={3}
@@ -65,7 +65,7 @@ export default function Cup({ position = [0, 0, 0] }: Props) {
           receiveShadow
           geometry={(nodes.Sphere002_1 as THREE.Mesh).geometry}
         >
-          <LayerMaterial color="#F2552C">
+          <LayerMaterial color="#F2552C" side={THREE.DoubleSide}>
             <Color color={"#F2552C"} />
             <Depth
               far={3}
@@ -95,6 +95,7 @@ export default function Cup({ position = [0, 0, 0] }: Props) {
           geometry={(nodes.Sphere002_2 as THREE.Mesh).geometry}
         >
           <MeshWobbleMaterial
+            side={THREE.DoubleSide}
             blending={THREE.AdditiveBlending}
             color={"#ffffff"}
             opacity={0.3}

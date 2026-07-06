@@ -55,7 +55,7 @@ export default function Home({ data }: Props) {
             dpr={[1, 1.25]}
             gl={{
               antialias: false,
-              depth: false,
+              depth: true,
               powerPreference: "high-performance",
             }}
             camera={{ position: [0, 0, 15], fov: 45 }}

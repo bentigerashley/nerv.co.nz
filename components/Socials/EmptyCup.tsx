@@ -29,7 +29,7 @@ export default function EmptyCup({ position }: Props) {
             receiveShadow
             geometry={(nodes.Circle007 as THREE.Mesh).geometry}
           >
-            <LayerMaterial color="#F2552C">
+            <LayerMaterial color="#F2552C" side={THREE.DoubleSide}>
               <Color color={"#F2552C"} />
               <Depth
                 far={3}
@@ -57,7 +57,7 @@ export default function EmptyCup({ position }: Props) {
             receiveShadow
             geometry={(nodes.Circle007_1 as THREE.Mesh).geometry}
           >
-            <LayerMaterial color="#F2552C">
+            <LayerMaterial color="#F2552C" side={THREE.DoubleSide}>
               <Color color={"#F2552C"} />
               <Depth
                 far={3}
@@ -86,6 +86,7 @@ export default function EmptyCup({ position }: Props) {
             geometry={(nodes.Circle007_2 as THREE.Mesh).geometry}
           >
             <meshStandardMaterial
+              side={THREE.DoubleSide}
               metalness={1.0}
               roughness={0.1}
               color={"white"}

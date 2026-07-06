@@ -11,7 +11,7 @@ export default function Items() {
   return (
     <Scroll>
       <Float
-        rotationIntensity={0.08}
+        rotationIntensity={0}
         floatingRange={[-0.1, 0.1]}
         floatIntensity={0.5}
         speed={2}
