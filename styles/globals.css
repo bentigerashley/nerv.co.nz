@@ -174,6 +174,43 @@ input:-webkit-autofill:active {
   transform-origin: left center;
 }
 
+.chain-icon {
+  position: relative;
+  display: block;
+  width: 50px;
+  height: 26px;
+  transform: rotate(-34deg);
+  transition: transform 180ms ease, filter 180ms ease;
+  filter: drop-shadow(0 0 5px rgba(255, 42, 26, 0.7));
+}
+
+.chain-icon::before,
+.chain-icon::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  width: 28px;
+  height: 16px;
+  border: 4px solid var(--signal-orange);
+  border-radius: 999px;
+  box-shadow: inset 0 0 0 1px var(--signal-red);
+}
+
+.chain-icon::before {
+  left: 0;
+}
+
+.chain-icon::after {
+  right: 0;
+  border-color: var(--signal-red);
+}
+
+.project-link:hover .chain-icon,
+.project-link:focus-visible .chain-icon {
+  transform: rotate(-34deg) translateX(3px) scale(1.08);
+  filter: drop-shadow(0 0 8px rgba(246, 177, 61, 0.9));
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

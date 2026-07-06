@@ -16,10 +16,10 @@ export default function PostItem({ title, description, href }: Props) {
         </div>
         <a
           href={href}
-          className="project-link absolute -top-4 right-4 z-20 grid h-11 w-11 place-items-center border border-signal bg-dark-blue font-mono text-xl text-amber transition hover:-translate-y-1 hover:border-amber hover:text-terminal"
+          className="project-link absolute -top-5 right-4 z-20 grid h-14 w-16 place-items-center"
           aria-label={`Open ${title}`}
         >
-          <span aria-hidden="true">↗</span>
+          <span className="chain-icon" aria-hidden="true" />
         </a>
       </div>
     </article>
