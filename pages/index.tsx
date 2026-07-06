@@ -53,7 +53,6 @@ export default function Home({ data }: Props) {
         <div className="fixed top-0 left-0 right-0 h-screen w-screen z-20">
           <Canvas
             dpr={[1, 1.25]}
-            frameloop="demand"
             gl={{
               antialias: false,
               depth: false,

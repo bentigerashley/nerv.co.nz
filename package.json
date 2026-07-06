@@ -17,6 +17,8 @@
     "@types/react-dom": "18.0.10",
     "@types/three": "^0.146.0",
     "framer-motion": "^8.0.2",
+    "framer-motion-3d": "^8.0.2",
+    "lamina": "^1.1.23",
     "next": "13.1.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
