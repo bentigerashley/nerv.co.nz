@@ -6,7 +6,6 @@ import Stack from "@/components/Stack/Stack";
 import Contact from "@/components/Contact/Contact";
 import Socials from "@/components/Socials/Socials";
 
-import Orb from "@/components/Orb/Orb";
 import Items from "@/components/Scene/Items";
 import { Suspense } from "react";
 import { ScrollControls, Scroll } from "@react-three/drei";
@@ -53,9 +52,13 @@ export default function Home({ data }: Props) {
       <main className={"bg-dark-blue text-light-clay font-sans"}>
         <div className="fixed top-0 left-0 right-0 h-screen w-screen z-20">
           <Canvas
-            shadows
-            dpr={[1, 2]}
-            gl={{ depth: false }}
+            dpr={[1, 1.25]}
+            frameloop="demand"
+            gl={{
+              antialias: false,
+              depth: false,
+              powerPreference: "high-performance",
+            }}
             camera={{ position: [0, 0, 15], fov: 45 }}
           >
             <color attach="background" args={["black"]}></color>
@@ -66,7 +69,6 @@ export default function Home({ data }: Props) {
               horizontal={false}
               infinite={false}
             >
-              <Orb />
               <Scroll html>
                 <div className="w-screen">
                   <div className="max-w-[1280px] mx-auto">

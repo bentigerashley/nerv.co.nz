@@ -1,9 +1,6 @@
 import * as THREE from "three";
-import React, { Suspense, useRef } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { useGLTF, Html } from "@react-three/drei";
-
-import Hero from "./Hero";
+import { useRef } from "react";
+import { useGLTF } from "@react-three/drei";
 type Props = {
   props?: Object;
   position: Array<number>;
