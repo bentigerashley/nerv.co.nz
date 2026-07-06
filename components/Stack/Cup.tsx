@@ -25,7 +25,7 @@ export default function Cup({ position = [0, 0, 0] }: Props) {
       dispose={null}
     >
       <group
-        scale={0.78}
+        scale={0.5}
         name="Tea"
         ref={cup}
         rotation={[0, -1.0, -0.66]}

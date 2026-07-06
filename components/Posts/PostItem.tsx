@@ -1,3 +1,7 @@
+import { lazy, useState } from "react";
+import { Canvas } from "@react-three/fiber";
+const LinkModel = lazy(() => import("./Link"));
+
 type Props = {
   title?: string;
   description?: string;
@@ -5,6 +9,7 @@ type Props = {
 };
 
 export default function PostItem({ title, description, href }: Props) {
+  const [linkHovered, setLinkHovered] = useState(false);
   return (
     <article className="w-full z-10">
       <h3 className="font-display origin-left uppercase text-2xl lg:text-3xl mb-3 ml-2 text-amber">
@@ -16,10 +21,18 @@ export default function PostItem({ title, description, href }: Props) {
         </div>
         <a
           href={href}
-          className="project-link absolute -top-5 right-4 z-20 grid h-14 w-16 place-items-center"
+          className="absolute top-0 right-0 z-0 w-30 h-30"
           aria-label={`Open ${title}`}
         >
-          <span className="chain-icon" aria-hidden="true" />
+          <Canvas
+            onMouseEnter={() => setLinkHovered(true)}
+            onMouseLeave={() => setLinkHovered(false)}
+            className="-mt-[25%] ml-[50%]"
+            onCreated={(state) => state.gl.setClearColor("black", 0.0)}
+            camera={{ position: [0, 0, 4] }}
+          >
+            <LinkModel hovered={linkHovered} />
+          </Canvas>
         </a>
       </div>
     </article>
