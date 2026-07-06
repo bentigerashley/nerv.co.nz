@@ -21,7 +21,7 @@ export default function EmptyCup({ position }: Props) {
       position={new THREE.Vector3(position[0], position[1], position[2])}
       dispose={null}
     >
-      <group name="Scene" scale={0.4} rotation={[0.6, Math.PI, -0.3]}>
+      <group name="Scene" scale={0.64} rotation={[0.6, Math.PI, -0.3]}>
         <group ref={group as MutableRefObject<Group>} name="Cup">
           <mesh
             name="Circle007"
