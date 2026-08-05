@@ -10,29 +10,62 @@ export default function ChessKing({ position }: Props) {
   const group = useRef<THREE.Group>(null);
 
   const bodyGeometry = useMemo(() => {
-    const profile = [
-      [0, -1.55],
-      [0.62, -1.55],
-      [0.78, -1.38],
-      [0.78, -1.22],
-      [0.52, -1.08],
-      [0.44, -0.88],
-      [0.5, -0.68],
-      [0.33, -0.48],
-      [0.26, 0.24],
-      [0.36, 0.56],
-      [0.48, 0.72],
-      [0.46, 0.92],
-      [0.3, 1.02],
-      [0.22, 1.18],
+    const anchors = [
+      [0.0, -1.58],
+      [0.5, -1.58],
+      [0.66, -1.52],
+      [0.8, -1.36],
+      [0.73, -1.2],
+      [0.5, -1.1],
+      [0.43, -0.92],
+      [0.5, -0.74],
+      [0.39, -0.56],
+      [0.3, -0.34],
+      [0.25, 0.24],
+      [0.34, 0.52],
+      [0.48, 0.7],
+      [0.45, 0.9],
+      [0.29, 1.02],
+      [0.2, 1.18],
       [0.28, 1.34],
       [0.42, 1.48],
-      [0.34, 1.64],
+      [0.35, 1.62],
       [0.16, 1.7],
-      [0, 1.72],
+      [0.0, 1.74],
     ].map(([x, y]) => new THREE.Vector2(x, y));
 
-    const geometry = new THREE.LatheGeometry(profile, 40);
+    const curve = new THREE.SplineCurve(anchors);
+    const profile = curve.getPoints(180);
+    const geometry = new THREE.LatheGeometry(profile, 128);
+    geometry.computeVertexNormals();
+    return geometry;
+  }, []);
+
+  const crossGeometry = useMemo(() => {
+    const shape = new THREE.Shape();
+    shape.moveTo(-0.1, -0.34);
+    shape.lineTo(0.1, -0.34);
+    shape.lineTo(0.1, -0.08);
+    shape.lineTo(0.31, -0.08);
+    shape.lineTo(0.31, 0.08);
+    shape.lineTo(0.1, 0.08);
+    shape.lineTo(0.1, 0.34);
+    shape.lineTo(-0.1, 0.34);
+    shape.lineTo(-0.1, 0.08);
+    shape.lineTo(-0.31, 0.08);
+    shape.lineTo(-0.31, -0.08);
+    shape.lineTo(-0.1, -0.08);
+    shape.closePath();
+
+    const geometry = new THREE.ExtrudeGeometry(shape, {
+      depth: 0.14,
+      bevelEnabled: true,
+      bevelSegments: 8,
+      bevelSize: 0.025,
+      bevelThickness: 0.025,
+      curveSegments: 16,
+    });
+    geometry.center();
     geometry.computeVertexNormals();
     return geometry;
   }, []);
@@ -42,9 +75,9 @@ export default function ChessKing({ position }: Props) {
       new THREE.MeshStandardMaterial({
         color: "#F2552C",
         emissive: "#8f210f",
-        emissiveIntensity: 0.55,
-        roughness: 0.32,
-        metalness: 0.28,
+        emissiveIntensity: 0.42,
+        roughness: 0.18,
+        metalness: 0.36,
       }),
     []
   );
@@ -54,9 +87,9 @@ export default function ChessKing({ position }: Props) {
       new THREE.MeshStandardMaterial({
         color: "#ffffff",
         emissive: "#F2552C",
-        emissiveIntensity: 0.22,
-        roughness: 0.22,
-        metalness: 0.4,
+        emissiveIntensity: 0.2,
+        roughness: 0.18,
+        metalness: 0.44,
       }),
     []
   );
@@ -75,17 +108,16 @@ export default function ChessKing({ position }: Props) {
       ref={group}
       position={new THREE.Vector3(position[0], position[1], position[2])}
       rotation={[0.16, -0.78, -0.08]}
-      scale={0.68}
+      scale={0.28}
       dispose={null}
     >
       <mesh geometry={bodyGeometry} material={orangeMaterial} />
-      <mesh material={highlightMaterial} position={[0, 1.9, 0]}>
-        <boxGeometry args={[0.2, 0.66, 0.13]} />
-      </mesh>
-      <mesh material={highlightMaterial} position={[0, 2.02, 0]}>
-        <boxGeometry args={[0.56, 0.16, 0.13]} />
-      </mesh>
-      <pointLight color="#F2552C" intensity={0.8} distance={4.5} />
+      <mesh
+        geometry={crossGeometry}
+        material={highlightMaterial}
+        position={[0, 1.98, 0]}
+      />
+      <pointLight color="#F2552C" intensity={0.5} distance={3.2} />
     </group>
   );
 }

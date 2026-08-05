@@ -33,7 +33,7 @@ export default function Items() {
         floatIntensity={0.2}
         speed={0.65}
       >
-        <ChessKing position={[1.45, -viewport.height * 2 + 1.2, -0.15]} />
+        <ChessKing position={[1.45, -viewport.height * 2 + 0.55, -0.15]} />
       </Float>
     </Scroll>
   );
