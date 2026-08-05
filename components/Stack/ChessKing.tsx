@@ -77,10 +77,10 @@ export default function ChessKing({ position }: Props) {
     () =>
       new THREE.MeshStandardMaterial({
         color: "#F2552C",
-        emissive: "#8f210f",
-        emissiveIntensity: 0.42,
-        roughness: 0.18,
-        metalness: 0.36,
+        emissive: "#F2552C",
+        emissiveIntensity: 0.72,
+        roughness: 0.24,
+        metalness: 0.12,
       }),
     []
   );
@@ -130,7 +130,7 @@ export default function ChessKing({ position }: Props) {
         material={highlightMaterial}
         position={[0, 1.98, 0]}
       />
-      <pointLight color="#F2552C" intensity={0.5} distance={3.2} />
+      <pointLight color="#F2552C" intensity={0.62} distance={3.2} />
     </group>
   );
 }
