@@ -1,7 +1,6 @@
 import { Scroll, Float } from "@react-three/drei";
 
-import Cup from "../Stack/Cup";
-import EmptyCup from "../Socials/EmptyCup";
+import ChessKing from "../Stack/ChessKing";
 import Laptop from "../Hero/Laptop";
 
 import { useThree } from "@react-three/fiber";
@@ -16,7 +15,6 @@ export default function Items() {
         floatIntensity={0.5}
         speed={2}
       >
-        <Cup position={[1.2, -viewport.height * 2, -0.1]} />
         <pointLight position={[10, 10, 10]} intensity={0.5} />
         <Suspense fallback={null}>
           <group
@@ -28,7 +26,14 @@ export default function Items() {
             <Laptop position={[-0.5, 0.25, -0.61]} />
           </group>
         </Suspense>
-        <EmptyCup position={[-0.8, -viewport.height * 4 + 0.1, -0.1]} />
+      </Float>
+      <Float
+        rotationIntensity={0.05}
+        floatingRange={[-0.04, 0.04]}
+        floatIntensity={0.2}
+        speed={0.65}
+      >
+        <ChessKing position={[1.45, -viewport.height * 2 + 1.2, -0.15]} />
       </Float>
     </Scroll>
   );
