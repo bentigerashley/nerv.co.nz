@@ -1,4 +1,5 @@
-import { useFrame } from "@react-three/fiber";
+import { useFrame, useThree } from "@react-three/fiber";
+import { useScroll } from "@react-three/drei";
 import { useMemo, useRef } from "react";
 import * as THREE from "three";
 
@@ -8,6 +9,8 @@ type Props = {
 
 export default function ChessKing({ position }: Props) {
   const group = useRef<THREE.Group>(null);
+  const scroll = useScroll();
+  const { viewport } = useThree((state) => state);
 
   const bodyGeometry = useMemo(() => {
     const anchors = [
@@ -98,9 +101,19 @@ export default function ChessKing({ position }: Props) {
     if (!group.current) return;
 
     const elapsed = clock.getElapsedTime();
+    const toolsOffset = 0.5;
+    const distanceFromTools = scroll.offset - toolsOffset;
+    const holdWindow = 0.32;
+    const holdStrength =
+      Math.max(0, 1 - Math.abs(distanceFromTools) / holdWindow) ** 2;
+    const scrollCounterMotion =
+      distanceFromTools * viewport.height * 0.32 * holdStrength;
+
     group.current.rotation.y = -0.78 + Math.sin(elapsed * 0.32) * 0.12;
     group.current.rotation.z = -0.08 + Math.sin(elapsed * 0.42) * 0.025;
-    group.current.position.y = position[1] + Math.sin(elapsed * 0.55) * 0.08;
+    group.current.position.y =
+      position[1] + scrollCounterMotion +
+      Math.sin(elapsed * 0.55) * 0.08;
   });
 
   return (
