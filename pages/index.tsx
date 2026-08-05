@@ -7,6 +7,7 @@ import Contact from "@/components/Contact/Contact";
 import Socials from "@/components/Socials/Socials";
 
 import Items from "@/components/Scene/Items";
+import SectionSnap from "@/components/Scene/SectionSnap";
 import { Suspense } from "react";
 import { ScrollControls, Scroll } from "@react-three/drei";
 
@@ -64,10 +65,11 @@ export default function Home({ data }: Props) {
             <ScrollControls
               pages={5}
               distance={1}
-              damping={6}
+              damping={5}
               horizontal={false}
               infinite={false}
             >
+              <SectionSnap pages={5} />
               <Scroll html>
                 <div className="w-screen">
                   <div className="max-w-[1280px] mx-auto">
