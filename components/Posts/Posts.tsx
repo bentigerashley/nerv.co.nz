@@ -30,7 +30,7 @@ export default function Posts({ posts }: Props) {
           ))}
         </div>
         <a
-          className="relative z-10 mt-10 ml-2 text-terminal text-md inline-flex items-center transition hover:text-amber hover:-translate-y-1"
+          className="relative z-10 mt-10 ml-2 font-mono text-terminal text-md inline-flex items-center transition hover:text-amber hover:-translate-y-1"
           href="https://github.com/bentigerashley"
         >
           Open Repository Index

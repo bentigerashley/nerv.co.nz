@@ -16,7 +16,7 @@ export default function PostItem({ title, description, href }: Props) {
         {title}
       </h3>
       <div className="signal-panel relative px-6 py-4">
-        <div className="text-md lg:text-lg relative z-10 text-light-clay">
+        <div className="font-mono text-md lg:text-lg relative z-10 text-light-clay">
           {description}
         </div>
         <a
