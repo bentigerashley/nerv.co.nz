@@ -26,15 +26,24 @@ interface Post {
 const posts: Post[] = [
   {
     title: "chess-vision",
-    desc: "Android app that captures or imports a photo of a chessboard, detects the board and pieces with TensorFlow Lite, converts the position to FEN, and runs Stockfish for evaluation and best move.",
+    desc: "App that detects chess pieces with ML and runs Stockfish for evaluation and best move.",
     link: "https://github.com/bentigerashley/chess-vision",
   },
   {
-    title: "nerv-vercel",
-    desc: "The website you're on. A developer portfolio built with Next.js, Three.js, Vercel, and a signal-driven interface for email handling.",
-    link: "https://github.com/bentigerashley/nerv.co.nz",
+    title: "fdi-headless",
+    desc: "Headless WordPress and Next.js test site with verified SSH staging CI/CD",
+    link: "https://github.com/bentigerashley/fdi-headless-test",
   },
-  
+  {
+    title: "opengl-engine",
+    desc: "Custom game engine with GLSL, CMake and C++",
+    link: "https://github.com/bentigerashley/opengl-engine",
+  },
+  {
+    title: "dotfiles",
+    desc: "My personal Arch Linux dotfiles for coding and desktop config",
+    link: "https://github.com/bentigerashley/dotfiles",
+  },
   
   
   
