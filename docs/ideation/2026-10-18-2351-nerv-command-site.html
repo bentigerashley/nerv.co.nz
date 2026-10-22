@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ideation: NERV command-site rebuild</title>
+  <style>
+    :root { color-scheme: dark; --ink:#090807; --paper:#f1e7ca; --red:#ef3024; --orange:#ff8a18; --mint:#7cf0bb; --line:#4a3424; }
+    * { box-sizing:border-box; } body { margin:0; background:var(--ink); color:var(--paper); font:15px/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    main { max-width:980px; margin:auto; padding:32px 22px 64px; } header { border:1px solid var(--red); padding:22px; background:linear-gradient(120deg,#200b09,transparent 60%); }
+    h1,h2,h3 { font-family:"Times New Roman",Times,serif; text-transform:uppercase; letter-spacing:-.03em; margin:0 0 12px; } h1 { font-size:clamp(2.4rem,8vw,5.4rem); transform:scaleX(.82); transform-origin:left; } h2 { color:var(--orange); margin-top:38px; font-size:2rem; } h3 { color:var(--mint); font-size:1.55rem; }
+    .meta,.jump { display:flex; flex-wrap:wrap; gap:8px 20px; color:#c9ac83; } .jump { padding:16px 0; border-bottom:1px solid var(--line); } a { color:var(--mint); } .card { border:1px solid var(--line); border-left:5px solid var(--red); padding:22px; margin:16px 0; background:#100d0a; } dt { color:var(--orange); float:left; width:116px; } dd { margin:0 0 10px 124px; } table { width:100%; border-collapse:collapse; } th,td { text-align:left; vertical-align:top; padding:10px; border-bottom:1px solid var(--line); } th { color:var(--orange); } footer { color:#8d7b67; margin-top:44px; font-size:.85rem; }
+    @media(max-width:560px){ dt { float:none; width:auto; } dd { margin-left:0; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="meta"><span>Date: 2026-10-18</span><span>Topic: nerv-command-site</span><span>Focus: new portfolio within <code>inspo/</code></span><span>Mode: repo-grounded</span></p>
+      <h1>Ideation: NERV command-site rebuild</h1>
+      <p>A visual direction for a self-contained portfolio experience that keeps the useful links visible while drawing its command language from the supplied NGE screens.</p>
+    </header>
+
+    <section id="grounding"><h2>Grounding context</h2>
+      <p>The existing site is a Next.js portfolio whose Directory contains four project links and whose External Signals point to GitHub, Discord, and LinkedIn. Its current visual vocabulary already establishes an off-white display face with horizontal compression, a mono data face, alert red/orange, and terminal mint. The supplied NGE reference set repeats red bar charts, mint traces, radial plots, diagonal safety stripes, status labels, and hexagonal warning fields. The project has no existing standalone microsite under <code>inspo/</code>.</p>
+    </section>
+
+    <section id="axes"><h2>Topic axes</h2>
+      <p>Entry and motion · Information hierarchy · Signal visualisation · Link discovery · Responsive and accessible operation</p>
+    </section>
+
+    <section id="ideas"><h2>Ranked ideas</h2>
+      <nav class="jump" aria-label="Ideas"><a href="#idea-1">01 Warning gate</a><a href="#idea-2">02 Command dashboard</a><a href="#idea-3">03 Directory as records</a><a href="#idea-4">04 Signals as ports</a><a href="#idea-5">05 Reference deck</a></nav>
+
+      <article class="card" id="idea-1"><h3>01. Hexagonal warning gate</h3><dl><dt>Description</dt><dd>Open on a short, staged warning sequence: alert hexagons, status copy, boot progress, and a bypass control. It establishes the world before yielding immediately to the portfolio.</dd><dt>Axis</dt><dd>Entry and motion</dd><dt>Basis</dt><dd><strong>direct:</strong> `nge9.jpg` is a red warning field built from repeated hexagons; `nge4.jpg` uses high-priority status typography and alarm color.</dd><dt>Rationale</dt><dd>The requested opening becomes a meaningful threshold instead of a decorative loading delay.</dd><dt>Downsides</dt><dd>Animation can delay access, so it needs a bypass and reduced-motion route.</dd><dt>Confidence</dt><dd>95%</dd><dt>Complexity</dt><dd>Medium</dd></dl></article>
+
+      <article class="card" id="idea-2"><h3>02. Command dashboard, not a poster</h3><dl><dt>Description</dt><dd>Use a clear hero panel with operational status, meter bars, a waveform, a circular target graphic, and concise navigation. Each data shape receives a content label and supports the hierarchy rather than filling every gap.</dd><dt>Axis</dt><dd>Information hierarchy</dd><dt>Basis</dt><dd><strong>direct:</strong> `nge1.jpg`, `nge2.jpg`, and `nge10.jpg` combine several chart types in bounded sections. <strong>reasoned:</strong> grouped panels preserve scan paths better than an unstructured collage.</dd><dt>Rationale</dt><dd>It captures NGE density while letting a visitor find the portfolio’s purpose in one glance.</dd><dt>Downsides</dt><dd>Too many widgets would become visual noise; the dashboard needs strict hierarchy.</dd><dt>Confidence</dt><dd>92%</dd><dt>Complexity</dt><dd>Medium</dd></dl></article>
+
+      <article class="card" id="idea-3"><h3>03. Directory as project records</h3><dl><dt>Description</dt><dd>Turn each retained project into a numbered record with stack/status metadata, a description, and an unambiguous launch link.</dd><dt>Axis</dt><dd>Link discovery</dd><dt>Basis</dt><dd><strong>direct:</strong> the existing Directory already carries four clear project names and descriptions. <strong>reasoned:</strong> the record metaphor aligns with the system interface without hiding the primary action.</dd><dt>Rationale</dt><dd>It retains the site’s highest-value content and makes it more scannable.</dd><dt>Downsides</dt><dd>Invented technical metadata could misrepresent projects; only known labels should be used.</dd><dt>Confidence</dt><dd>96%</dd><dt>Complexity</dt><dd>Low</dd></dl></article>
+
+      <article class="card" id="idea-4"><h3>04. External signals as outbound ports</h3><dl><dt>Description</dt><dd>Keep the three social destinations as high-contrast port cards with platform name, signal code, and external-link affordance.</dd><dt>Axis</dt><dd>Link discovery</dd><dt>Basis</dt><dd><strong>direct:</strong> the existing External Signals component contains GitHub, Discord, and LinkedIn. <strong>reasoned:</strong> named actions work better than icon-only controls for first-time visitors.</dd><dt>Rationale</dt><dd>It retains the requested page while giving the social links a stronger visual role.</dd><dt>Downsides</dt><dd>Platform marks need not be copied; text labels are sufficient.</dd><dt>Confidence</dt><dd>94%</dd><dt>Complexity</dt><dd>Low</dd></dl></article>
+
+      <article class="card" id="idea-5"><h3>05. Reference deck as a lower-priority archive</h3><dl><dt>Description</dt><dd>Place selected supplied images in a controlled, captioned archive panel near the end of the page. The image deck enriches the visual language after the visitor can reach the useful links.</dd><dt>Axis</dt><dd>Signal visualisation</dd><dt>Basis</dt><dd><strong>direct:</strong> the user supplied thirteen NGE images, including static and animated studies. <strong>reasoned:</strong> deferred rich media avoids crowding the first decision screen.</dd><dt>Rationale</dt><dd>It gives the inspiration material an explicit home without turning the portfolio into an image dump.</dd><dt>Downsides</dt><dd>Large imagery can affect initial load; render compact previews and lazy-load them.</dd><dt>Confidence</dt><dd>86%</dd><dt>Complexity</dt><dd>Low</dd></dl></article>
+    </section>
+
+    <section id="rejections"><h2>Rejection summary</h2><table><thead><tr><th>Idea</th><th>Reason rejected</th></tr></thead><tbody><tr><td>Full-screen image slideshow</td><td>Turns the supplied references into the primary task and delays project discovery.</td></tr><tr><td>Icon-only social dock</td><td>Weakens the retained External Signals content for visitors unfamiliar with the marks.</td></tr><tr><td>Always-on glitch effects</td><td>Reduces readability and makes reduced-motion support harder to honor.</td></tr><tr><td>Direct NERV logo recreation</td><td>Not needed to convey the design language; original typography and system graphics are stronger.</td></tr></tbody></table></section>
+    <footer>Composed 2026-10-18 by ce-ideate from the user prompt, local references, and current portfolio source.</footer>
+  </main>
+</body>
+</html>
